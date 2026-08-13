@@ -1,6 +1,6 @@
 OGD WinCaffè Booster & Optimizer
 
-**Versione 1.0.35.0R3 — Windows 11 x64**
+**Versione 1.0.35.0R3 — Windows 11 x64** (Alpha)
 
 WinCaffè è un’applicazione desktop dedicata al controllo, alla diagnostica e
 all’ottimizzazione di Windows, con particolare attenzione al gaming, alla
