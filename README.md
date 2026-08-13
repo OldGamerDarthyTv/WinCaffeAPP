@@ -280,7 +280,7 @@ Questa release è basata sulla SDK stabile 1.0.34.0 e integra:
 Ideato e sviluppato da **Luigi Sestili Spurio (OldGamerDarthy)** —
 **OGD And Company Productions**.
 
-Sito: [ogdproductions.it](https://ogdproductions.it)
+Sito: https://oldgamerdarthytv.github.io/
 
 Il progetto è distribuito secondo i termini della **GNU General Public License
 v3.0**. Consultare il file di licenza incluso nel pacchetto per il testo
