@@ -1,181 +1,292 @@
-# ☕ OGD WinCaffè App Booster & Optimizer - v1.0.30.0 Alpha Pro
-> **Developed by OldGamerDarthy (Luigi Sestili Spurio - OGD Productions)**  
-> **Co-authored & Enhanced by Antigravity (AI Coding Assistant - Google DeepMind)**  
-> *License: GNU GPL v3.0 | Compatibility: Windows 8 / 8.1 / 10 / 11 (26H2) / 12*
+OGD WinCaffè Booster & Optimizer
 
+**Versione 1.0.35.0R3 — Windows 11 x64**
+
+WinCaffè è un’applicazione desktop dedicata al controllo, alla diagnostica e
+all’ottimizzazione di Windows, con particolare attenzione al gaming, alla
+reattività del sistema e alla gestione delle applicazioni più pesanti.
+
+Il progetto riunisce una moderna interfaccia grafica e il motore operativo
+**OGD WinCaffè 10.0.0 Old UI**, aggiornato e corretto per questa release.
+
+> WinCaffè interviene su impostazioni di sistema, processi, servizi e profili
+> energetici. Prima di applicare modifiche importanti è sempre consigliato
+> creare un punto di ripristino o un backup.
+
+## A chi è destinato
+
+WinCaffè è pensato per chi desidera:
+
+- conoscere in tempo reale lo stato del proprio PC;
+- preparare Windows per il gaming;
+- assegnare più risorse a giochi e applicazioni selezionate;
+- ridurre attività in background non necessarie;
+- controllare RAM, dischi, rete e processi;
+- applicare ottimizzazioni guidate senza modificare manualmente il registro;
+- conservare un registro leggibile delle operazioni eseguite.
+
+Non è necessario conoscere PowerShell. Le funzioni principali sono accessibili
+dall’interfaccia; l’Ottimizzatore Avanzato utilizza invece una console guidata
+con menu numerati.
+
+## Funzioni principali
+
+### Dashboard Live
+
+La schermata iniziale offre una panoramica del computer:
+
+- utilizzo in tempo reale di CPU e RAM;
+- nome e classe prestazionale di CPU e GPU;
+- quantità e caratteristiche della memoria;
+- spazio disponibile sul disco di sistema;
+- scheda di rete rilevata;
+- piano energetico attivo;
+- tipo di dispositivo, versione Windows e versione PowerShell;
+- stato dell’Auto-Boost e risoluzione del timer;
+- riavvio rapido di Esplora risorse per liberare cache e ripristinare la shell.
+
+La classificazione hardware serve come indicazione orientativa per adattare i
+profili. La R3 riconosce correttamente anche i processori Ryzen X3D recenti,
+compreso il Ryzen 9850X3D.
+
+### Ottimizzazioni Pro
+
+Da questa sezione si apre l’**Ottimizzatore Avanzato WinCaffè 10.0.0**.
+
+La console interattiva chiede inizialmente il tipo di PC:
+
+1. Desktop
+2. Laptop
+3. Laptop Gaming
+
+Le scelte successive permettono di accedere ai profili e agli strumenti del
+motore Old UI. La console deve rimanere aperta durante l’operazione e le
+risposte vanno inserite nella finestra PowerShell appena comparsa.
+
+### Auto-Boost Engine
+
+Auto-Boost rileva giochi e applicazioni attive e può gestire automaticamente:
+
+- priorità del processo in primo piano;
+- priorità ridotta per processi secondari selezionati;
+- EcoQoS per le attività compatibili;
+- profili personalizzati per giochi, applicazioni ed esclusioni;
+- affinità CPU e comportamento dei processi, quando abilitati dall’utente.
+
+Auto-Boost è disattivato all’avvio: l’utente mantiene il controllo e decide
+quando attivarlo.
+
+### Applications Booster
+
+Applications Booster assegna un profilo dedicato a un’applicazione scelta
+dall’utente. È adatto ad applicazioni generiche e supporta anche scenari con
+Vortex, Node.js ed Electron.
+
+È possibile indicare il programma, selezionare il profilo e configurare le
+risorse disponibili. Alla disattivazione, WinCaffè arresta il monitoraggio e
+ripristina in modo sicuro il piano energetico precedente.
+
+### Gaming Guard
+
+Gaming Guard comprende strumenti rivolti alle sessioni di gioco:
+
+- rilevamento dei giochi e dei processi in primo piano;
+- modalità di gioco con gestione dei servizi in background;
+- diagnostica hardware e latenza in tempo reale;
+- controllo dello stato e ripristino delle funzioni sospese;
+- gestione di giochi, applicazioni ed esclusioni personalizzate.
+
+Usare sempre il comando di arresto o ripristino prima di chiudere una sessione
+di ottimizzazione particolarmente aggressiva.
+
+### Monitor Hardware e RAM Watchdog
+
+Il monitor raccoglie telemetria locale del sistema. RAM Watchdog osserva
+l’utilizzo della memoria e mette a disposizione interventi manuali di pulizia,
+come il trim dei working set e la pulizia profonda della memoria quando
+richiesta.
+
+La pulizia della RAM non aumenta la memoria fisica installata e non deve essere
+usata continuamente: Windows gestisce normalmente la cache in autonomia.
+
+### Storage & Dischi Pro
+
+Questa area permette di controllare lo stato dei dischi e utilizzare strumenti
+di manutenzione e diagnostica. Le operazioni disponibili possono variare in
+base al tipo di unità e ai dati esposti dal sistema.
+
+Prima di qualunque intervento sullo storage è raccomandato salvare i dati
+importanti. WinCaffè non sostituisce un programma professionale di recupero o
+un backup verificato.
+
+### DNS Benchmark
+
+Confronta le prestazioni dei server DNS disponibili per aiutare l’utente a
+individuare una configurazione di rete più reattiva. I risultati dipendono
+dalla connessione, dal provider, dalla posizione e dal momento del test.
+
+### Desktop & Avvio
+
+Raccoglie funzioni per la gestione del desktop, della shell di Windows e degli
+elementi che influenzano l’avvio. Controllare sempre l’elenco proposto prima di
+disabilitare qualcosa di necessario al proprio lavoro.
+
+### Console Log
+
+Mostra messaggi, avvisi, risultati ed errori prodotti dalle azioni eseguite
+nell’app. In caso di problema, copiare l’intero blocco interessato: è molto più
+utile di una semplice schermata del messaggio finale.
+
+## Requisiti
+
+- Windows 11 a 64 bit;
+- account con privilegi amministrativi;
+- **.NET Desktop Runtime 10 x64**;
+- PowerShell 7 consigliato;
+- Windows PowerShell 5.1 utilizzabile come compatibilità di riserva;
+- spazio libero sufficiente per installazione, log e backup.
+
+Alcune funzioni dipendono dalle caratteristiche del PC, dai driver installati e
+dalle autorizzazioni offerte da Windows.
+
+## Installazione
+
+1. Chiudere eventuali versioni precedenti di WinCaffè.
+2. Creare un backup o un punto di ripristino.
+3. Avviare `WinCaffeNext_Setup_1.0.35.0R3.exe`.
+4. Confermare la richiesta di amministratore.
+5. Scegliere se creare il collegamento sul Desktop.
+6. Al termine, avviare **OGD WinCaffè Booster**.
+
+Il percorso predefinito è:
+
+```text
+C:\Program Files\OGD PRODUCTIONS\OGD WinCaffe Booster
 ```
-╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                                                                                     ║
-║   👑 OGD PROJECT COMMUNITY - WINCAFFÈ APP BOOSTER v1.0.30.0 ALPHA PRO                               ║
-║   La Suite di Ottimizzazione Nativa e Latenza Zero Definitiva per Windows                           ║
-║                                                                                                     ║
-║   ┌─────────────────────────────────────────────────────────────────────────────────────────────┐   ║
-║   │  🎯 CLASSE HARDWARE ADATTIVA: High-End Extreme / Mid-Spec Gaming / Legacy Low-Spec          │   ║
-║   │  ⚡ TIMER RISOLUZIONE SISTEMA: 0.50 ms (NtSetTimerResolution Native Lock)                   │   ║
-║   │  🎮 PROCESS LIMITER IN-GAME : Active (Throttling Dinamico Background via Win32 API)        │   ║
-║   │  💾 SMART STORAGE WATCHDOG: Monitoring In-Game & Dynamic ReTrim Queue Balancing             │   ║
-║   └─────────────────────────────────────────────────────────────────────────────────────────────┘   ║
-║                                                                                                     ║
-╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝
-```
+
+L’applicazione usa un launcher dedicato. Non è necessario avviare manualmente
+file DLL o script dalla cartella di installazione.
+
+## Primo utilizzo consigliato
+
+1. Aprire la Dashboard e controllare che l’hardware sia rilevato correttamente.
+2. Leggere eventuali avvisi nella Console Log.
+3. Creare un punto di ripristino prima dei primi tweak.
+4. Provare una funzione alla volta.
+5. Riavviare Windows quando indicato.
+6. Verificare stabilità, temperature, audio, rete e periferiche.
+7. Attivare Auto-Boost o Gaming Guard solo quando servono.
+
+Evitare di applicare contemporaneamente più profili simili: in questo modo è
+più semplice capire quale modifica ha prodotto un determinato risultato.
+
+## Sicurezza e comportamento delle ottimizzazioni
+
+WinCaffè può modificare temporaneamente o permanentemente:
+
+- piani e impostazioni energetiche;
+- priorità e affinità dei processi;
+- servizi e attività in background;
+- impostazioni di rete, gaming e latenza;
+- cache, memoria e comportamento della shell;
+- alcune chiavi di configurazione di Windows.
+
+Un’ottimizzazione non garantisce automaticamente più FPS. Il risultato varia
+in base a hardware, driver, giochi, temperature e configurazione iniziale.
+Profili estremi possono aumentare consumi, temperatura o rumorosità.
+
+Non interrompere il PC durante un’operazione e non chiudere forzatamente la
+console mentre sta applicando o ripristinando modifiche.
+
+## Ripristino e disinstallazione
+
+Quando una funzione offre un comando **Stop**, **Disattiva**, **Ripristina** o
+equivalente, usare prima quel comando. In caso di comportamento anomalo:
+
+1. fermare Auto-Boost, Gaming Guard o Applications Booster;
+2. ripristinare il profilo energetico precedente;
+3. riavviare Windows;
+4. utilizzare il punto di ripristino se il problema persiste.
+
+Per rimuovere l’app usare **Impostazioni > App > App installate > OGD WinCaffè
+Booster > Disinstalla**. La disinstallazione rimuove anche la vecchia attività
+pianificata WinCaffeNext, se presente.
+
+## Risoluzione dei problemi
+
+### Windows chiede i privilegi amministrativi
+
+È previsto: molte ottimizzazioni richiedono autorizzazioni elevate. Verificare
+che l’installer provenga dal pacchetto ufficiale prima di confermare.
+
+### L’app richiede .NET
+
+Installare il **.NET Desktop Runtime 10 x64**, non soltanto una versione .NET
+precedente. Dopo l’installazione riavviare Windows e aprire WinCaffè dal suo
+collegamento ufficiale.
+
+### L’Ottimizzatore Avanzato apre una nuova finestra
+
+È il comportamento corretto. Il motore 10.0.0 usa richieste interattive: digitare
+le scelte nella console PowerShell, non nel registro grafico dell’app.
+
+### Compare un errore `Read-Host` o `NonInteractive`
+
+La R3 aggiornata avvia l’Ottimizzatore Avanzato in modalità interattiva. Se
+l’errore compare ancora, è probabilmente installato un pacchetto R3 precedente:
+reinstallare usando l’ultimo setup generato e verificare il relativo checksum.
+
+### La diagnostica mostra dati incompleti
+
+Aggiornare la diagnostica, attendere alcuni secondi e controllare la Console
+Log. Sensori, temperature e dati SMART non sono esposti allo stesso modo da
+tutti i driver e dispositivi.
+
+### Un’azione sembra bloccata
+
+Controllare se è aperta una console in attesa di una scelta. Se non lo è,
+consultare la Console Log e usare il comando di annullamento dell’azione
+corrente. WinCaffè limita l’annullamento al processo avviato dall’app.
+
+### Caratteri strani nella console o nel registro
+
+Usare PowerShell 7 aggiornato e un font compatibile con Unicode. Il problema di
+visualizzazione non implica necessariamente che l’operazione sia fallita:
+controllare sempre lo stato finale e il log.
+
+## Privacy
+
+Le funzioni principali di diagnostica e ottimizzazione lavorano localmente sul
+computer. I log possono contenere nomi di processi, percorsi, componenti
+hardware e informazioni sulla configurazione: controllarli prima di condividerli
+pubblicamente.
+
+## Informazioni sulla versione 1.0.35.0R3
+
+Questa release è basata sulla SDK stabile 1.0.34.0 e integra:
+
+- motore ufficiale OGD WinCaffè 10.0.0 Old UI;
+- Applications Booster corretto e aggiornato;
+- gestione sicura dell’arresto e del piano energetico;
+- fallback a Windows PowerShell 5.1;
+- Auto-Boost non attivo automaticamente all’avvio;
+- launcher amministrativo dedicato;
+- avvio interattivo corretto dell’Ottimizzatore Avanzato;
+- correzione dell’inizializzazione diagnostica sul thread grafico;
+- classificazione aggiornata delle CPU Ryzen X3D recenti.
+
+## Progetto e licenza
+
+Ideato e sviluppato da **Luigi Sestili Spurio (OldGamerDarthy)** —
+**OGD And Company Productions**.
+
+Sito: [ogdproductions.it](https://ogdproductions.it)
+
+Il progetto è distribuito secondo i termini della **GNU General Public License
+v3.0**. Consultare il file di licenza incluso nel pacchetto per il testo
+completo e le condizioni applicabili.
 
 ---
 
-## 📖 MANUALE TECNICO E ARCHITETTURA DI SISTEMA
-
-WinCaffè non è un semplice script di pulizia, ma un'applicazione di livello industriale sviluppata in **WPF (.NET 10)** ed **Engine PowerShell 7 Nativo**, progettata per eliminare i colli di bottiglia del sistema operativo Windows, azzerare l'input lag e massimizzare la stabilità dei framerate (0.1% e 1% Low FPS).
-
----
-
-## 🎨 1. ARCHITETTURA GRAFICA WIDE & STEALTH BLACK LUXURY
-
-L'interfaccia utente è basata su uno stile visivo moderno a contrasto elevato, progettato per ridurre l'affaticamento visivo e garantire il supporto a qualsiasi configurazione di monitor.
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ ☕ WINCAFFÈ WPF PRO SUITE - DASHBOARD                                                    [🗕] [🗖] [✕] │
-├────────────────────────┬────────────────────────────────────────────────────────────────────────────┤
-│  📊 TELEMETRIA LIVE    │ 📊 TELEMETRIA HARDWARE & SISTEMA OPERATIVO IN TEMPO REALE                  │
-│  🎮 AUTO-BOOST ENGINE  │ ├─ CPU Class      : Intel Core / AMD Ryzen (Hybrid Architecture Detected)  │
-│  💾 STORAGE & DISCHI   │ ├─ Active Scheme : OGD Extreme Gaming (Zero Core Parking 100%)              │
-│  🛠️ WINFORMS TWEAKS    │ ├─ Memory Status : 32.0 GB Total (Working Sets Dynamic Trim Active)        │
-│  🧹 TEMP CLEANER SAFE  │ └─ Storage Status: NVMe Ultra-Fast Drive C: (ReTrim & DirectStorage Ready) │
-├────────────────────────┴────────────────────────────────────────────────────────────────────────────┤
-│  🟢 STATUS: Motore Auto-Boost Attivo | Precision Lock 0.5ms Attivo | Watchdog In-Game In Ascolto     │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-*   **Ridimensionamento Dinamico Aspect Ratio**: Supporto nativo per schermi standard **16:9** (1080p, 1440p, 4K) e schermi **21:9 / 32:9 Ultrawide** con controllo `ResizeMode="CanResizeWithGrip"` e pulsante dedicato di ingrandimento/ripristino finestra.
-*   **Asset Grafici Ufficiali**: Incorpora il nuovo stemma ad alta definizione con corona dorata `#OGD COMMUNITY` convertito in formato `.ico` multi-risoluzione (fino a 256x256 pixel PNG frame) per garantire la massima nitidezza nell'eseguibile e nell'installer.
-
----
-
-## 🧠 2. SMART HARDWARE TIER DETECTOR (`HardwareTierDetector.cs`)
-
-L'applicazione integra un motore euristico in C# che rileva le specifiche hardware all'avvio e calibra dinamicamente le strategie di ottimizzazione del sistema operativo:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-║ 🎯 ARCHITETTURA DI CALIBRAZIONE ADATTIVA HARDWARE                                                    ║
-├────────────────────┬───────────────────────────────────┬────────────────────────────────────────────┤
-║ CLASSE HARDWARE    ║ REQUISITI RILEVATI                ║ STRATEGIA DI OTTIMIZZAZIONE APPLICATA      ║
-├────────────────────┼───────────────────────────────────┼────────────────────────────────────────────┤
-║ 🔴 Legacy Low-Spec ║ RAM <= 8GB, CPU <= 4 Core o GPU   ║ Trimming RAM aggressivo, prevenzione       ║
-║                    ║ integrata (Intel HD/Vega/Basic)   ║ surriscaldamento, profilo energetico safe. ║
-├────────────────────┼───────────────────────────────────┼────────────────────────────────────────────┤
-║ 🟡 Mid-Spec Gaming ║ RAM <= 16GB, CPU <= 8 Core, GPU   ║ Priorità di processo High, Timer 0.5ms,     ║
-║                    ║ dedicata di fascia media          ║ bilanciamento stabilità termica/FPS.       ║
-├────────────────────┼───────────────────────────────────┼────────────────────────────────────────────┤
-║ 🟢 High-End Extreme║ RAM >= 32GB, CPU Multi-Core Top,  ║ Zero Core Parking (100% Cores Unparked),   ║
-║                    ║ GPU High-End (RTX/Radeon RX)      ║ PCIe Link State Power OFF, I/O Priority Max║
-└────────────────────┴───────────────────────────────────┴────────────────────────────────────────────┘
-```
-
----
-
-## 🛡️ 3. SMART PROCESS LIMITER ENGINE (`ProcessLimiter.cs`)
-
-Durante le sessioni di gioco, il background limiter entra in funzione automaticamente per sopprimere l'impatto dei processi di sottofondo non essenziali tramite chiamate dirette Win32 API (`SetPriorityClass`):
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-║ 🎮 PROCESS LIMITER IN-GAME - MAPPA DELLE AZIONI AUTOMATICHE                                          ║
-├───────────────────────────────────────┬─────────────────────────────────────────────────────────────┤
-║ PROCESSI BROWSER                      ║ msedge.exe, chrome.exe, firefox.exe, opera.exe, brave.exe   ║
-║ └─ Azione Applicata                   ║ Priorità impostata a IDLE / EcoMode (Riduzione CPU 95%)     ║
-├───────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
-║ PROCESSI COMUNICAZIONE & MEDIA        ║ discord.exe, teams.exe, slack.exe, spotify.exe, vlc.exe     ║
-║ └─ Azione Applicata                   ║ Priorità impostata a BELOW_NORMAL (Protezione Latenza Audio)║
-├───────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
-║ SERVIZI DI BACKGROUND & CLOUD         ║ onedrive.exe, searchhost.exe, diagtrack.exe, tiworker.exe   ║
-║ └─ Azione Applicata                   ║ Throttling I/O e sospensione chiamate disk-intensive        ║
-└───────────────────────────────────────┴─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 💾 4. PAGINA "STORAGE & DISCHI PRO" & ARCHITETTURA I/O 2.0 (`Invoke-FileIoGeneral`)
-
-Una sezione dedicata unicamente al monitoraggio ed alla velocizzazione delle unità di memoria:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-║ 💾 STORAGE & DISCHI PRO - MONITORE & TWEAKS                                                         ║
-├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-║ [🎮 Smart Storage Watchdog (In-Game)] ──────> [ 🟢 Watchdog Attivo / 🔴 Watchdog Disattivato ]       ║
-║  ├─ Esegue il ReTrim/Cache flush automatico in caso di rilevamento micro-stuttering in game.       ║
-║  └─ Interfaccia con pulsante di attivazione/disattivazione istantanea per l'utente.                ║
-├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-║ [🛠️ Apri Menu Tweaks WinForms Storage] ───> Avvia il menu PowerShell WinForms dedicato agli I/O.   ║
-║ [⚡ Ottimizza File I/O Adattivo 2.0] ──────> Esegue l'ottimizzazione pulita zero-thrashing.          ║
-└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### ⚙️ Dettaglio Tecnico Architettura Storage 2.0:
-1.  **Pulizia Chiavi IFEO Obsolete**: Scansiona e rimuove le vecchie chiavi rigide di registro `IoPriority` sotto `Image File Execution Options` che provocavano il blocco delle code nei dischi meccanici (HDD).
-2.  **NTFS Last Access Time OFF**: Disabilita la scrittura della data di ultimo accesso ai file (`fsutil behavior set disablelastaccess 1`) aumentando la velocità nei giochi open-world.
-3.  **8.3 Filename Creation OFF**: Disabilita la generazione dei nomi brevi in formato DOS 8.3 (`fsutil behavior set disable8dot3 1`), velocizzando le ricerche di file su dischi ad alta densità.
-4.  **TRIM & ReTrim Attivo**: Forza l'abilitazione del TRIM (`DisableDeleteNotify 0`) ed esegue la deframmentazione delle celle libere via `Optimize-Volume -ReTrim`.
-
----
-
-## ⚡ 5. PROFILO ENERGIA OGD EXTREME GAMING (`Apply-OgdExtremePowerPlanPure`)
-
-Il profilo energetico viene sbloccato e configurato nel registro di Windows per garantire le massime prestazioni:
-
-*   **Zero Core Parking (`PROCTHROTTLEMIN = 100%`)**: Forza tutti i core della CPU a rimanere costantemente attivi e svegli alla massima frequenza, azzerando le latenze di risveglio dei core.
-*   **Processor Performance Boost Mode (`PERFBOOSTMODE = 2`)**: Configura la frequenza della CPU su *Aggressive*, consentendo alla CPU di raggiungere istantaneamente le frequenze di Turbo Boost.
-*   **PCI Express Link State Power Management (`OFF`)**: Disabilita il risparmio energetico sul bus PCIe (`ee12f904-a817-4960-9b21-3fc4386fc16f`), garantendo la massima larghezza di banda ed azzerando la latenza di comunicazione con la GPU.
-*   **USB Selective Suspend (`OFF`)**: Mantiene sempre alimentate le porte USB (`48e6697b-9a1b-4226-9168-06fbb420d586`), evitando il micro-disaccoppiamento dei mouse gaming ad alto polling rate (4K/8K Hz).
-
----
-
-## 🛡️ 6. SICUREZZA 100% ANTIVIRUS & ANTI-CHEAT FRIENDLY
-
-Tutte le funzioni dell'applicazione utilizzano unicamente le chiamate di sistema ed API ufficiali aperte di Microsoft Windows:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-║ 🛡️ TRASPARENZA & COMPATIBILITÀ SISTEMI DI SICUREZZA                                                  ║
-├──────────────────────────────────────┬──────────────────────────────────────────────────────────────┤
-║ API UFFICIALE UTILIZZATA            ║ SCOPO E FUNZIONALITÀ                                         ║
-├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-║ NtSetTimerResolution(5000, true)     ║ Lock risoluzione timer a 0.5ms (API nativa Windows).         ║
-║ SetPriorityClass(hProc, High/Idle)   ║ Cambia la priorità del processo (Uguale al Task Manager).    ║
-║ SetProcessAffinityMask(hProc, Mask)  ║ Assegna i core CPU dedicati al gioco o all'applicazione.     ║
-║ SetProcessWorkingSetSize(hProc, ...) ║ Svuota la Standby List ed effettua il Trimming della RAM.    ║
-├──────────────────────────────────────┴──────────────────────────────────────────────────────────────┤
-║ ❌ ZERO Iniezione di Codice (No DLL Injection) | ❌ ZERO Memory Hacking nei Processi di Gioco        ║
-║ ✅ 100% Compatibile con Riot Vanguard, Easy Anti-Cheat, BattLEye, Ricochet e Windows Defender.       ║
-└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🧹 7. SAFE TEMP PC CLEANER (`TempCleaner.cs`)
-
-Modulo di pulizia temporanea sviluppato nativamente in C# con protezione rigorosa delle credenziali del pregresso utente:
-
-*   **Cartelle Pulite**: `User Temp`, `Windows Temp`, `Prefetch`, `SoftwareDistribution\Download` e `CrashDumps`.
-*   **Esclusioni Tassative di Sicurezza**: Salta ed esclude completamente tutti i percorsi appartenenti ai browser web (`\Google\Chrome\`, `\Microsoft\Edge\`, `\Mozilla Firefox\`, `\BraveSoftware\`, `\Opera\`) e protegge file sensibili come `Login Data`, `Web Data`, `Cookies`, `Vault`, `History`, `Preferences`, garantendo che nessun salvataggio di password o sessione vada mai perso.
-
----
-
-## 🌐 8. COMPATIBILITÀ UNIVERSALE MULTI-OS
-
-L'applicazione garantisce la massima stabilità da **Windows 8** fino alle future build di Windows:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-║ 🌐 MATRICE COMPATIBILITÀ SISTEMI OPERATIVI SUPPORTATI                                                ║
-├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-║  [✓] Windows 8 / 8.1             (Supportato con fallback WMI nativo)                              ║
-║  [✓] Windows 10 (Tutte le Build)  (Supportato con gestione completa P/E Cores)                      ║
-║  [✓] Windows 11 (21H2 - 26H2)    (Supportato con ottimizzazione DirectStorage & StorNVMe)          ║
-║  [✓] Windows 12 (Futuro OS)      (Pronto con architettura API dinamica safe)                        ║
-└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-*OGD WinCaffè App Booster Pro v1.0.30.0 Alpha - Crafted for Ultimate Gaming Performance.*
+**WinCaffè aiuta a controllare e ottimizzare il sistema, ma backup, prudenza e
+verifica delle modifiche restano sempre parte essenziale del processo.**
