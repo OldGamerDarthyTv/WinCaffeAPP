@@ -1,292 +1,202 @@
-OGD WinCaffè Booster & Optimizer
+# ☕ WinCaffe Next
 
-**Versione 1.0.35.0R3 — Windows 11 x64** (Alpha)
+**WinCaffe Next** è una suite gratuita e open source per Windows 10 e Windows 11, progettata per migliorare la gestione delle risorse del PC durante il gaming e l’utilizzo di applicazioni impegnative.
 
-WinCaffè è un’applicazione desktop dedicata al controllo, alla diagnostica e
-all’ottimizzazione di Windows, con particolare attenzione al gaming, alla
-reattività del sistema e alla gestione delle applicazioni più pesanti.
+Il progetto nasce dall’esperienza di **OldGamerDarthy — Luigi Sestili Spurio / OGD Productions** con un obiettivo preciso: offrire ottimizzazioni comprensibili, controllabili e reversibili, evitando modifiche estreme che possano compromettere stabilità, sicurezza o compatibilità.
 
-Il progetto riunisce una moderna interfaccia grafica e il motore operativo
-**OGD WinCaffè 10.0.0 Old UI**, aggiornato e corretto per questa release.
+## 🚀 Come funziona
 
-> WinCaffè interviene su impostazioni di sistema, processi, servizi e profili
-> energetici. Prima di applicare modifiche importanti è sempre consigliato
-> creare un punto di ripristino o un backup.
+WinCaffe monitora in tempo reale i processi attivi e riconosce automaticamente giochi, applicazioni, launcher e servizi collegati.
 
-## A chi è destinato
+Quando viene rilevato un gioco, il motore Auto-Boost può:
 
-WinCaffè è pensato per chi desidera:
+- assegnare una priorità CPU adatta al tipo di gioco;
+- ridurre l’impatto dei processi non essenziali sotto carico;
+- proteggere audio, overlay, launcher e servizi sensibili alla latenza;
+- gestire in modo adattivo CPU AMD Ryzen X3D e Intel ibride;
+- ottimizzare RAM, timer di sistema e piano energetico;
+- ripristinare automaticamente le impostazioni originali al termine della sessione.
 
-- conoscere in tempo reale lo stato del proprio PC;
-- preparare Windows per il gaming;
-- assegnare più risorse a giochi e applicazioni selezionate;
-- ridurre attività in background non necessarie;
-- controllare RAM, dischi, rete e processi;
-- applicare ottimizzazioni guidate senza modificare manualmente il registro;
-- conservare un registro leggibile delle operazioni eseguite.
+WinCaffe non utilizza mai la priorità `Realtime` e non applica affinità CPU rigide senza una motivazione precisa.
 
-Non è necessario conoscere PowerShell. Le funzioni principali sono accessibili
-dall’interfaccia; l’Ottimizzatore Avanzato utilizza invece una console guidata
-con menu numerati.
+## 🎮 Database gaming aggiornabile
 
-## Funzioni principali
+L’app include un database con profili dedicati a giochi competitivi, titoli AAA, simulatori, launcher e sistemi anti-cheat.
 
-### Dashboard Live
+Il database permette di associare a ogni eseguibile:
 
-La schermata iniziale offre una panoramica del computer:
+- categoria del processo;
+- priorità consigliata;
+- comportamento del booster;
+- protezione da modifiche inappropriate;
+- eventuali indicazioni per l’affinità CPU.
 
-- utilizzo in tempo reale di CPU e RAM;
-- nome e classe prestazionale di CPU e GPU;
-- quantità e caratteristiche della memoria;
-- spazio disponibile sul disco di sistema;
-- scheda di rete rilevata;
-- piano energetico attivo;
-- tipo di dispositivo, versione Windows e versione PowerShell;
-- stato dell’Auto-Boost e risoluzione del timer;
-- riavvio rapido di Esplora risorse per liberare cache e ripristinare la shell.
+I titoli competitivi riconosciuti possono utilizzare la priorità `High`, mentre per la maggior parte dei giochi viene preferita `AboveNormal`, più equilibrata e sicura.
 
-La classificazione hardware serve come indicazione orientativa per adattare i
-profili. La R3 riconosce correttamente anche i processori Ryzen X3D recenti,
-compreso il Ryzen 9850X3D.
+Le configurazioni personali dell’utente hanno sempre precedenza sul database. Gli aggiornamenti online vengono controllati e installati solamente se struttura, dimensione e contenuto risultano validi.
 
-### Ottimizzazioni Pro
+## ⚡ Auto-Boost persistente
 
-Da questa sezione si apre l’**Ottimizzatore Avanzato WinCaffè 10.0.0**.
+Le impostazioni Auto-Boost rimangono attive dopo il riavvio di Windows.
 
-La console interattiva chiede inizialmente il tipo di PC:
+Quando la funzione viene abilitata, WinCaffe configura automaticamente il proprio avvio. Disabilitandola, l’attività collegata viene rimossa.
 
-1. Desktop
-2. Laptop
-3. Laptop Gaming
+L’utente conserva sempre il controllo su:
 
-Le scelte successive permettono di accedere ai profili e agli strumenti del
-motore Old UI. La console deve rimanere aperta durante l’operazione e le
-risposte vanno inserite nella finestra PowerShell appena comparsa.
+- attivazione del monitoraggio;
+- priorità generale dei giochi;
+- riduzione dei processi in background;
+- profili personalizzati;
+- esclusioni;
+- ottimizzazioni individuali.
 
-### Auto-Boost Engine
+## 🧠 CPU AMD Ryzen X3D e Intel ibride
 
-Auto-Boost rileva giochi e applicazioni attive e può gestire automaticamente:
+WinCaffe include una gestione migliorata delle CPU moderne.
 
-- priorità del processo in primo piano;
-- priorità ridotta per processi secondari selezionati;
-- EcoQoS per le attività compatibili;
-- profili personalizzati per giochi, applicazioni ed esclusioni;
-- affinità CPU e comportamento dei processi, quando abilitati dall’utente.
+Per i Ryzen X3D:
 
-Auto-Boost è disattivato all’avvio: l’utente mantiene il controllo e decide
-quando attivarlo.
+- utilizza tutti i core sui modelli single-CCD;
+- riconosce anche Ryzen 7 9850X3D;
+- sui modelli dual-CCD lascia la scelta del CCD corretto a Windows Game Mode e al driver AMD 3D V-Cache;
+- evita di escludere arbitrariamente metà della CPU.
 
-### Applications Booster
+Per le CPU Intel ibride, il booster tiene conto della presenza di P-Core ed E-Core, evitando maschere aggressive quando la topologia non può essere determinata con sufficiente affidabilità.
 
-Applications Booster assegna un profilo dedicato a un’applicazione scelta
-dall’utente. È adatto ad applicazioni generiche e supporta anche scenari con
-Vortex, Node.js ed Electron.
+## 💾 Ottimizzazione Storage
 
-È possibile indicare il programma, selezionare il profilo e configurare le
-risorse disponibili. Alla disattivazione, WinCaffè arresta il monitoraggio e
-ripristina in modo sicuro il piano energetico precedente.
+La sezione Storage comprende strumenti dedicati a:
 
-### Gaming Guard
+- unità NVMe;
+- SSD SATA;
+- dischi HDD;
+- TRIM e ReTrim;
+- diagnostica delle unità;
+- analisi dei volumi;
+- ottimizzazioni NTFS compatibili con Windows.
 
-Gaming Guard comprende strumenti rivolti alle sessioni di gioco:
+Ogni operazione mostra:
 
-- rilevamento dei giochi e dei processi in primo piano;
-- modalità di gioco con gestione dei servizi in background;
-- diagnostica hardware e latenza in tempo reale;
-- controllo dello stato e ripristino delle funzioni sospese;
-- gestione di giochi, applicazioni ed esclusioni personalizzate.
+- output PowerShell completo;
+- messaggi `VERBOSE`;
+- fase corrente;
+- barra di avanzamento in tempo reale;
+- risultato finale;
+- segnalazione visiva degli errori.
 
-Usare sempre il comando di arresto o ripristino prima di chiudere una sessione
-di ottimizzazione particolarmente aggressiva.
+WinCaffe identifica separatamente unità SATA, NVMe e USB, evitando di applicare profili incompatibili al tipo di dispositivo.
 
-### Monitor Hardware e RAM Watchdog
+## 🧰 Controllo dei componenti .NET
 
-Il monitor raccoglie telemetria locale del sistema. RAM Watchdog osserva
-l’utilizzo della memoria e mette a disposizione interventi manuali di pulizia,
-come il trim dei working set e la pulizia profonda della memoria quando
-richiesta.
+Lo script principale può controllare e aggiornare tramite Winget:
 
-La pulizia della RAM non aumenta la memoria fisica installata e non deve essere
-usata continuamente: Windows gestisce normalmente la cache in autonomia.
+- .NET Runtime;
+- .NET Desktop Runtime;
+- ASP.NET Core Runtime;
+- .NET SDK.
 
-### Storage & Dischi Pro
+Se .NET non è installato, vengono proposti i componenti .NET 10 x64 necessari.
 
-Questa area permette di controllare lo stato dei dischi e utilizzare strumenti
-di manutenzione e diagnostica. Le operazioni disponibili possono variare in
-base al tipo di unità e ai dati esposti dal sistema.
+Questo controllo appartiene allo script di manutenzione e non viene imposto durante il normale avvio dell’interfaccia.
 
-Prima di qualunque intervento sullo storage è raccomandato salvare i dati
-importanti. WinCaffè non sostituisce un programma professionale di recupero o
-un backup verificato.
+## 📊 Altre funzionalità
 
-### DNS Benchmark
+WinCaffe comprende inoltre:
 
-Confronta le prestazioni dei server DNS disponibili per aiutare l’utente a
-individuare una configurazione di rete più reattiva. I risultati dipendono
-dalla connessione, dal provider, dalla posizione e dal momento del test.
+- monitoraggio CPU, RAM, GPU e Storage;
+- RAM Watchdog configurabile;
+- pulizia controllata della memoria;
+- gestione della shader cache;
+- diagnostica hardware;
+- piani energetici dedicati;
+- ottimizzazione di applicazioni selezionate;
+- Gaming Guard;
+- gestione della precisione del timer;
+- scansione delle librerie Steam, Epic Games, Riot, Ubisoft e GOG;
+- terminale grafico con output in tempo reale;
+- ripristino automatico delle impostazioni modificate.
 
-### Desktop & Avvio
+## 🛡️ Sicurezza e compatibilità
 
-Raccoglie funzioni per la gestione del desktop, della shell di Windows e degli
-elementi che influenzano l’avvio. Controllare sempre l’elenco proposto prima di
-disabilitare qualcosa di necessario al proprio lavoro.
+WinCaffe è progettato per essere trasparente e compatibile con i sistemi di protezione dei giochi.
 
-### Console Log
+Il progetto:
 
-Mostra messaggi, avvisi, risultati ed errori prodotti dalle azioni eseguite
-nell’app. In caso di problema, copiare l’intero blocco interessato: è molto più
-utile di una semplice schermata del messaggio finale.
+- non contiene telemetria;
+- non raccoglie dati personali;
+- non include pubblicità;
+- non effettua iniezioni nei processi;
+- non modifica i file dei giochi;
+- non utilizza driver kernel personalizzati;
+- non esegue overclock;
+- non altera i processi anti-cheat;
+- non imposta priorità `Realtime`;
+- ripristina le impostazioni temporanee al termine del boost.
 
-## Requisiti
+Le operazioni che richiedono privilegi amministrativi vengono eseguite attraverso la normale richiesta UAC di Windows.
 
-- Windows 11 a 64 bit;
-- account con privilegi amministrativi;
-- **.NET Desktop Runtime 10 x64**;
+## 🖥️ Requisiti
+
+- Windows 10 o Windows 11 x64;
+- .NET Desktop Runtime 10;
 - PowerShell 7 consigliato;
-- Windows PowerShell 5.1 utilizzabile come compatibilità di riserva;
-- spazio libero sufficiente per installazione, log e backup.
+- privilegi amministrativi per le ottimizzazioni di sistema.
 
-Alcune funzioni dipendono dalle caratteristiche del PC, dai driver installati e
-dalle autorizzazioni offerte da Windows.
+Per compilare il progetto sono richiesti:
 
-## Installazione
+- .NET 10 SDK;
+- PowerShell 7;
+- Inno Setup 6 per generare l’installer.
 
-1. Chiudere eventuali versioni precedenti di WinCaffè.
-2. Creare un backup o un punto di ripristino.
-3. Avviare `WinCaffeNext_Setup_1.0.35.0R3.exe`.
-4. Confermare la richiesta di amministratore.
-5. Scegliere se creare il collegamento sul Desktop.
-6. Al termine, avviare **OGD WinCaffè Booster**.
+## 📦 Installazione
 
-Il percorso predefinito è:
+1. Scarica l’ultima versione dalla sezione **Releases**.
+2. Avvia `WinCaffeNext_Setup_1.0.35.1.exe`.
+3. Conferma la richiesta UAC.
+4. Apri la sezione Auto-Boost e scegli le funzioni desiderate.
+5. Usa la scansione delle librerie per aggiungere automaticamente i giochi installati.
 
-```text
-C:\Program Files\OGD PRODUCTIONS\OGD WinCaffe Booster
-```
+È possibile installare una nuova versione sopra quella precedente. Le impostazioni personali dell’Auto-Boost vengono mantenute.
 
-L’applicazione usa un launcher dedicato. Non è necessario avviare manualmente
-file DLL o script dalla cartella di installazione.
+## 🧪 Stato della versione 1.0.35.1
 
-## Primo utilizzo consigliato
+La versione 1.0.35.1 introduce:
 
-1. Aprire la Dashboard e controllare che l’hardware sia rilevato correttamente.
-2. Leggere eventuali avvisi nella Console Log.
-3. Creare un punto di ripristino prima dei primi tweak.
-4. Provare una funzione alla volta.
-5. Riavviare Windows quando indicato.
-6. Verificare stabilità, temperature, audio, rete e periferiche.
-7. Attivare Auto-Boost o Gaming Guard solo quando servono.
+- Auto-Boost persistente;
+- database gaming aggiornabile;
+- 83 profili e 169 eseguibili unici;
+- gestione migliorata di Ryzen X3D;
+- priorità selettive per gioco;
+- protezione dei processi anti-cheat;
+- barra di avanzamento per le operazioni Storage;
+- ripristino del controllo dei componenti .NET;
+- correzione del primo avvio dopo l’installazione;
+- sincronizzazione della lista giochi;
+- rimozione della funzione OpenDyslexic;
+- ulteriori correzioni di stabilità e sicurezza.
 
-Evitare di applicare contemporaneamente più profili simili: in questo modo è
-più semplice capire quale modifica ha prodotto un determinato risultato.
+## 🤝 Contributi
 
-## Sicurezza e comportamento delle ottimizzazioni
+Segnalazioni, test e proposte sono benvenuti.
 
-WinCaffè può modificare temporaneamente o permanentemente:
+Quando apri una segnalazione, indica possibilmente:
 
-- piani e impostazioni energetiche;
-- priorità e affinità dei processi;
-- servizi e attività in background;
-- impostazioni di rete, gaming e latenza;
-- cache, memoria e comportamento della shell;
-- alcune chiavi di configurazione di Windows.
+- versione di Windows;
+- modello della CPU;
+- quantità di RAM;
+- modello della GPU;
+- gioco o applicazione interessata;
+- messaggi presenti nel terminale di WinCaffe;
+- passaggi necessari per riprodurre il problema.
 
-Un’ottimizzazione non garantisce automaticamente più FPS. Il risultato varia
-in base a hardware, driver, giochi, temperature e configurazione iniziale.
-Profili estremi possono aumentare consumi, temperatura o rumorosità.
+Non pubblicare password, token, nomi utente o altre informazioni personali.
 
-Non interrompere il PC durante un’operazione e non chiudere forzatamente la
-console mentre sta applicando o ripristinando modifiche.
+## 📜 Licenza
 
-## Ripristino e disinstallazione
+WinCaffe Next è un progetto gratuito e open source distribuito con licenza **GNU GPL v3.0**.
 
-Quando una funzione offre un comando **Stop**, **Disattiva**, **Ripristina** o
-equivalente, usare prima quel comando. In caso di comportamento anomalo:
-
-1. fermare Auto-Boost, Gaming Guard o Applications Booster;
-2. ripristinare il profilo energetico precedente;
-3. riavviare Windows;
-4. utilizzare il punto di ripristino se il problema persiste.
-
-Per rimuovere l’app usare **Impostazioni > App > App installate > OGD WinCaffè
-Booster > Disinstalla**. La disinstallazione rimuove anche la vecchia attività
-pianificata WinCaffeNext, se presente.
-
-## Risoluzione dei problemi
-
-### Windows chiede i privilegi amministrativi
-
-È previsto: molte ottimizzazioni richiedono autorizzazioni elevate. Verificare
-che l’installer provenga dal pacchetto ufficiale prima di confermare.
-
-### L’app richiede .NET
-
-Installare il **.NET Desktop Runtime 10 x64**, non soltanto una versione .NET
-precedente. Dopo l’installazione riavviare Windows e aprire WinCaffè dal suo
-collegamento ufficiale.
-
-### L’Ottimizzatore Avanzato apre una nuova finestra
-
-È il comportamento corretto. Il motore 10.0.0 usa richieste interattive: digitare
-le scelte nella console PowerShell, non nel registro grafico dell’app.
-
-### Compare un errore `Read-Host` o `NonInteractive`
-
-La R3 aggiornata avvia l’Ottimizzatore Avanzato in modalità interattiva. Se
-l’errore compare ancora, è probabilmente installato un pacchetto R3 precedente:
-reinstallare usando l’ultimo setup generato e verificare il relativo checksum.
-
-### La diagnostica mostra dati incompleti
-
-Aggiornare la diagnostica, attendere alcuni secondi e controllare la Console
-Log. Sensori, temperature e dati SMART non sono esposti allo stesso modo da
-tutti i driver e dispositivi.
-
-### Un’azione sembra bloccata
-
-Controllare se è aperta una console in attesa di una scelta. Se non lo è,
-consultare la Console Log e usare il comando di annullamento dell’azione
-corrente. WinCaffè limita l’annullamento al processo avviato dall’app.
-
-### Caratteri strani nella console o nel registro
-
-Usare PowerShell 7 aggiornato e un font compatibile con Unicode. Il problema di
-visualizzazione non implica necessariamente che l’operazione sia fallita:
-controllare sempre lo stato finale e il log.
-
-## Privacy
-
-Le funzioni principali di diagnostica e ottimizzazione lavorano localmente sul
-computer. I log possono contenere nomi di processi, percorsi, componenti
-hardware e informazioni sulla configurazione: controllarli prima di condividerli
-pubblicamente.
-
-## Informazioni sulla versione 1.0.35.0R3
-
-Questa release è basata sulla SDK stabile 1.0.34.0 e integra:
-
-- motore ufficiale OGD WinCaffè 10.0.0 Old UI;
-- Applications Booster corretto e aggiornato;
-- gestione sicura dell’arresto e del piano energetico;
-- fallback a Windows PowerShell 5.1;
-- Auto-Boost non attivo automaticamente all’avvio;
-- launcher amministrativo dedicato;
-- avvio interattivo corretto dell’Ottimizzatore Avanzato;
-- correzione dell’inizializzazione diagnostica sul thread grafico;
-- classificazione aggiornata delle CPU Ryzen X3D recenti.
-
-## Progetto e licenza
-
-Ideato e sviluppato da **Luigi Sestili Spurio (OldGamerDarthy)** —
-**OGD And Company Productions**.
-
-Sito: https://oldgamerdarthytv.github.io/
-
-Il progetto è distribuito secondo i termini della **GNU General Public License
-v3.0**. Consultare il file di licenza incluso nel pacchetto per il testo
-completo e le condizioni applicabili.
+Sviluppato da **OldGamerDarthy — Luigi Sestili Spurio / OGD Productions** con il contributo degli utenti, dei tester e degli strumenti di intelligenza artificiale utilizzati durante lo sviluppo.
 
 ---
 
-**WinCaffè aiuta a controllare e ottimizzare il sistema, ma backup, prudenza e
-verifica delle modifiche restano sempre parte essenziale del processo.**
+☕ **WinCaffe Next — più controllo sul PC, più risorse per ciò che conta.**
